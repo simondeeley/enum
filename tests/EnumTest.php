@@ -39,7 +39,6 @@ final class EnumTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessageRegExp('"BAR"');
-        $this->expectExceptionMessageRegExp(get_class($enum));
 
         $enum = new class ('BAR') extends Enum
         {

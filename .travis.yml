@@ -1,13 +1,19 @@
 language: php
-php:
-  - '7.1'
-  - nightly
+sudo: false
+
+matrix:
+  include:
+    - php: 7.1
+      env: TEST=stable
+    - php: nightly
+      env: TEST=nightly
+  fast_finish: true
 
 cache:
   - vendor
 
 before_script:
-  - phpenv config-rm xdebug.ini
+  - if [ "$TEST" = "stable" ]; then phpenv config-rm xdebug.ini; fi
   - composer install
 
 script:
