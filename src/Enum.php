@@ -42,7 +42,7 @@ abstract class Enum implements EnumType
      */
     final public function __construct(string $type)
     {
-        if (null === constant("static::$type")) {
+        if (false === defined("static::$type") || null === constant("static::$type")) {
            throw new InvalidArgumentException(sprintf(
              'The type "%s" is not valid for the ENUM %s',
              $type,
