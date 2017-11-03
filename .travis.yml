@@ -2,3 +2,13 @@ language: php
 php:
   - '7.1'
   - nightly
+
+cache:
+  - vendor
+
+before_script:
+  - phpenv config-rm xdebug.ini
+  - composer install
+
+script:
+  - phpdbg -qrr phpunit --bootstrap src/autoload.php tests
