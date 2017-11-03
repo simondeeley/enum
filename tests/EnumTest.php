@@ -38,7 +38,8 @@ final class EnumTest extends TestCase
     public function testShouldThrowExceptionWhenInvalidTypePassed(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessageRegExp('\bBAR\b');
+        $this->expectExceptionMessageRegExp('"BAR"');
+        $this->expectExceptionMessageRegExp(get_class($enum));
 
         $enum = new class ('BAR') extends Enum
         {
