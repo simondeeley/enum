@@ -9,6 +9,8 @@ declare(strict_types=1);
  * @copyright Simon Deeley 2017
  */
 
+namespace simondeeley;
+
 use InvalidArgumentException;
 
 /**
