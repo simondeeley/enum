@@ -11,4 +11,4 @@ before_script:
   - composer install
 
 script:
-  - phpdbg -qrr $COMPOSER_BIN_DIR/phpunit --bootstrap vendor/autoload.php tests
+  - phpdbg -qrr $PATH/phpunit --bootstrap vendor/autoload.php tests
