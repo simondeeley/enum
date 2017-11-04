@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace simondeeley;
 
 use InvalidArgumentException;
+use simondeeley\ImmutableBehaviour;
 
 /**
  * Eum class
@@ -25,6 +26,8 @@ use InvalidArgumentException;
  */
 abstract class Enum implements EnumType
 {
+    use ImmutableBehaviour;
+    
     /**
      * @var string $type
      */

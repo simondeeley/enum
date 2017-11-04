@@ -11,13 +11,15 @@ declare(strict_types=1);
 
 namespace simondeeley;
 
+use simondeeley\Type;
+
 /**
  * Enum Type
  *
  * Defines a set of methods that must be implemented in any object that is
  * of the type 'ENUM'
  */
-interface EnumType
+interface EnumType extends Type
 {
     /**
      * Return the ENUM type

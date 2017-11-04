@@ -20,7 +20,8 @@
         "docs": "https://github.com/simondeeley/enum/wiki"
     },
     "require": {
-        "php": "~7.1"
+        "php": "~7.1",
+        "simondeeley/type": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.4"
