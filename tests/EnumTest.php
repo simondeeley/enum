@@ -32,7 +32,7 @@ final class EnumTest extends TestCase
 
         $this->assertTrue($enum instanceof Enum);
         $this->assertTrue($enum instanceof EnumType);
-        $this->assertTrue($enum->getType() === 'ENUM (FOO)');
+        $this->assertTrue($enum::getType() === 'ENUM');
     }
 
     public function testShouldThrowExceptionWhenInvalidTypePassed(): void

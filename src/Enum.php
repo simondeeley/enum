@@ -60,11 +60,12 @@ abstract class Enum extends ImmutableObject implements EnumType
       * Returns the type of the ENUM
       *
       * @see simondeeley\Type\Type
+      * @static
       *
       * @return string - String literal of the enum object
       */
-     public function getType(): string
+     public static function getType(): string
      {
-          return sprintf('ENUM (%s)', $this->type);
+          return 'ENUM';
      }
 }
