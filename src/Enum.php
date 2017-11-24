@@ -5,14 +5,13 @@ declare(strict_types=1);
  * For the full copyright information please view the LICENCE file that was
  * distributed with this package.
  *
- * @author    Simon Deeley <s.deeley@icloud.com>
  * @copyright Simon Deeley 2017
  */
 
 namespace simondeeley;
 
 use InvalidArgumentException;
-use simondeeley\ImmutableBehaviour;
+use simondeeley\ImmutableObject;
 
 /**
  * Eum class
@@ -22,12 +21,13 @@ use simondeeley\ImmutableBehaviour;
  * constants will be the enumerable types checked against when you instantiate
  * a new instance of your ENUM object.
  *
+ * @author Simon Deeley <s.deeley@icloud.com>
+ *
  * @abstract
+ * @uses ImmutableObject
  */
-abstract class Enum implements EnumType
+abstract class Enum extends ImmutableObject implements EnumType
 {
-    use ImmutableBehaviour;
-    
     /**
      * @var string $type
      */
@@ -39,9 +39,9 @@ abstract class Enum implements EnumType
      * Takes one paramater which is the type of the ENUM object. If that type
      * does not exist in the ENUM object then an exception is thrown.
      *
-     * @param string $value
+     * @param string $value - The value of the ENUM
      * @return void
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException - Thrown if the value passed is invalid
      */
     final public function __construct(string $type)
     {
@@ -57,14 +57,14 @@ abstract class Enum implements EnumType
      }
 
      /**
-      * Returns the ENUM type
+      * Returns the type of the ENUM
       *
-      * Simply returns the value of the ENUM object, which is a string literal.
+      * @see simondeeley\Type\Type
       *
-      * @return string
+      * @return string - String literal of the enum object
       */
-     final public function __toString(): string
+     public function getType(): string
      {
-        return $this->type;
+          return sprintf('ENUM (%s)', $this->type);
      }
 }
