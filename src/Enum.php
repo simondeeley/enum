@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace simondeeley;
 
 use InvalidArgumentException;
+use simondeeley\Type\EnumType;
 use simondeeley\ImmutableObject;
 
 /**
