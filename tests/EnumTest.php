@@ -14,7 +14,7 @@ namespace simondeeley\Tests;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use simondeeley\Enum;
-use simondeeley\EnumType;
+use simondeeley\Type\EnumType;
 
 /**
 * Unit tests for Enum class
@@ -32,7 +32,7 @@ final class EnumTest extends TestCase
 
         $this->assertTrue($enum instanceof Enum);
         $this->assertTrue($enum instanceof EnumType);
-        $this->assertTrue((string) $enum === 'FOO');
+        $this->assertTrue($enum::getType() === 'ENUM');
     }
 
     public function testShouldThrowExceptionWhenInvalidTypePassed(): void
