@@ -1,34 +1,34 @@
 {
-    "name": "simondeeley/enum",
-    "description": "A simple ENUM object for PHP",
-    "version": "0.4.0",
-    "type": "library",
-    "keywords": ["php", "enum", "immutable"],
-    "homepage": "https://github.com/simondeeley",
-    "license": "GPL-3.0",
-    "authors": [
-        {
-            "name": "Simon Deeley",
-            "email": "s.deeley@icloud.com",
-            "homepage": "https://github.com/simondeeley",
-            "role": "Developer"
-        }
-    ],
-    "support": {
-        "issues": "https://github.com/simondeeley/enum/issues",
-        "source": "https://github.com/simondeeley/enum",
-        "docs": "https://github.com/simondeeley/enum/wiki"
-    },
-    "require": {
-        "php": "~7.1",
-        "simondeeley/type": "~1.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "~6.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "simondeeley\\": "src/"
-        }
+  "name": "simondeeley/enum",
+  "description": "A simple ENUM object for PHP",
+  "version": "1.0.0",
+  "type": "library",
+  "keywords": ["php", "enum", "immutable"],
+  "homepage": "https://github.com/simondeeley",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Simon Deeley",
+      "email": "s.deeley@icloud.com",
+      "homepage": "https://github.com/simondeeley",
+      "role": "Developer"
     }
+  ],
+  "support": {
+    "issues": "https://github.com/simondeeley/enum/issues",
+    "source": "https://github.com/simondeeley/enum",
+    "docs": "https://github.com/simondeeley/enum/blob/master/README.md"
+  },
+  "require": {
+    "php": "~7.1",
+    "simondeeley/type": "~1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~6.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "simondeeley\\": "src/"
+    }
+  }
 }
