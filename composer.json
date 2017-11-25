@@ -1,7 +1,6 @@
 {
   "name": "simondeeley/enum",
   "description": "A simple ENUM object for PHP",
-  "version": "1.0.0",
   "type": "library",
   "keywords": ["php", "enum", "immutable"],
   "homepage": "https://github.com/simondeeley",
