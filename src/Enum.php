@@ -67,6 +67,6 @@ abstract class Enum extends ImmutableObject implements EnumType
       */
      public static function getType(): string
      {
-          return 'ENUM';
+         return 'ENUM';
      }
 }
