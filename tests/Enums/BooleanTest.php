@@ -35,9 +35,7 @@ final class BooleanTest extends EnumTestCase
     {
         return [
             [ 'TRUE', true, 'BOOLEAN' ],
-            [ Boolean::TRUE, true, 'BOOLEAN' ],
             [ 'FALSE', false, 'BOOLEAN' ],
-            [ Boolean::FALSE, false, 'BOOLEAN' ],
         ];
     }
 
@@ -51,7 +49,7 @@ final class BooleanTest extends EnumTestCase
         return [
             [ 'foo' ],
             [ 'true' ],
-            [ 'false' ],
+            [ false ],
             [ '' ]
         ];
     }

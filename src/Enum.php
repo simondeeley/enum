@@ -50,7 +50,7 @@ abstract class Enum extends ImmutableObject implements EnumType
            throw new InvalidEnumValueException;
         }
 
-        $this->value = constant(static::$type);
+        $this->value = constant($type);
      }
 
      /**
