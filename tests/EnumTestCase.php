@@ -52,9 +52,11 @@ abstract class EnumTestCase extends TestCase
      * @test
      * @dataProvider staticData
      * @param string $method - the method to call statically
+     * @param mixed $expected - the value of the enum
+     * @param string $type - the expected enum type
      * @return void
      */
-    final public function shouldCorrectlyInstantiateObjectStatically(string $method): void
+    final public function shouldCorrectlyInstantiateObjectStatically(string $method, $expected, string $type): void
     {
         $enum = call_user_func(sprintf(
             '%s::%s',
