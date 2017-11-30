@@ -67,3 +67,5 @@ $true = Boolean::true();
 
 $saturday = Weekday::Saturday();
 ```
+
+This functionality is built-in to any enums extending the base [`Enum`](../blob/master/src/Enum.php) type object. The only caveats are that when performing static method calls that it is best to keep in-line with PHP good coding practice and to ensure all constants are typed in uppercase.
