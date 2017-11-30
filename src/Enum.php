@@ -65,7 +65,7 @@ abstract class Enum extends ImmutableObject implements EnumType
       * @throws
       * @throws InvalidEnumValueException - Thrown if the value passed is not an enum constant
       */
-     final public function __callStatic(string $method, array $args = []): self
+     final public static function __callStatic(string $method, array $args = []): self
      {
          try {
              return new self(strtoupper($method));
