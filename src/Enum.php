@@ -30,9 +30,9 @@ use simondeeley\ImmutableObject;
 abstract class Enum extends ImmutableObject implements EnumType
 {
     /**
-     * @var string $type
+     * @var mixed $value
      */
-    protected $type;
+    protected $value;
 
     /**
      * Construct a new ENUM object
@@ -54,7 +54,18 @@ abstract class Enum extends ImmutableObject implements EnumType
            ));
         }
 
-        $this->type = $type;
+        $this->value = constant(static::$type);
+     }
+
+     /**
+      * Returns the value of the ENUM
+      *
+      * @final
+      * @return mixed
+      */
+     final public function getValue()
+     {
+         return $this->value;
      }
 
      /**
