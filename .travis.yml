@@ -7,14 +7,15 @@ git:
 matrix:
   include:
     - php: 7.1
-      env: TEST=stable
+    - php: 7.2
     - php: nightly
-      env: TEST=nightly
   fast_finish: true
 
 cache:
   - vendor
 
 before_script:
-  - if [ "$TEST" = "stable" ]; then phpenv config-rm xdebug.ini; fi
   - composer install --no-interaction
+
+after_script:
+  -  php tests/coverage.php clover.xml $COVERAGE
