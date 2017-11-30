@@ -54,6 +54,27 @@ abstract class Enum extends ImmutableObject implements EnumType
      }
 
      /**
+      * Call a static method to construct a new enum
+      *
+      * Attempts to convert the called method name to uppercase but if that fails
+      * then it resorts to using whatever case the method name was passed in.
+      *
+      * @param string $name - the name of the method to invoke
+      * @param array $args - an array of arguments passed to the method call
+      * @return self
+      * @throws
+      * @throws InvalidEnumValueException - Thrown if the value passed is not an enum constant
+      */
+     final public function __callStatic(string $method, array $args = []): self
+     {
+         try {
+             return new self(strtoupper($method));
+         } catch (InvalidEnumValueException $exception) {
+             return new self($method);
+         }
+     }
+
+     /**
       * Returns the value of the ENUM
       *
       * @final

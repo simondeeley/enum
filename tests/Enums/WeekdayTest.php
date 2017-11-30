@@ -49,6 +49,19 @@ final class WeekdayTest extends EnumTestCase
      *
      * @return array
      */
+    final public function staticData(): array
+    {
+        return [
+            [ 'Monday', 'Monday', 'WEEKDAY' ],
+            [ 'monday', 'Monday', 'WEEKDAY' ],
+        ];
+    }
+
+    /**
+     * Data provider
+     *
+     * @return array
+     */
     final public function invalidData(): array
     {
         return [

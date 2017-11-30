@@ -26,8 +26,7 @@ final class BooleanTest extends EnumTestCase
      */
     protected static $class = Boolean::class;
 
-    /**
-     * Data provider
+    /* Data provider
      *
      * @return array
      */
@@ -36,6 +35,19 @@ final class BooleanTest extends EnumTestCase
         return [
             [ 'TRUE', true, 'BOOLEAN' ],
             [ 'FALSE', false, 'BOOLEAN' ],
+        ];
+    }
+
+    /**
+     * Data provider
+     *
+     * @return array
+     */
+    final public function staticData(): array
+    {
+        return [
+            [ 'true', true, 'BOOLEAN' ],
+            [ 'True', true, 'BOOLEAN' ],
         ];
     }
 

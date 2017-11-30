@@ -47,6 +47,23 @@ abstract class EnumTestCase extends TestCase
     }
 
     /**
+     * Test should correctly instantiate object statically
+     *
+     * @test
+     * @dataProvider staticData
+     * @param string $method - the method to call statically
+     * @return void
+     */
+    final public function shouldCorrectlyInstantiateObjectStatically(string $method): void
+    {
+        $enum = call_user_func(static::$class, "::$method");
+
+        $this->assertInstanceOf(EnumType::class, $enum);
+        $this->assertEquals($expected, $enum->getValue());
+        $this->assertEquals($type, $enum::getType());
+    }
+
+    /**
      * Test should throw exception when invalid constant passed
      *
      * @test
@@ -68,6 +85,13 @@ abstract class EnumTestCase extends TestCase
      * @return array
      */
     abstract public function validData(): array;
+
+    /**
+     * Data provider
+     *
+     * @return array
+     */
+    abstract public function staticData(): array;
 
     /**
      * Data provider
