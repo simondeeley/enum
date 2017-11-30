@@ -62,7 +62,6 @@ abstract class Enum extends ImmutableObject implements EnumType
       * @param string $name - the name of the method to invoke
       * @param array $args - an array of arguments passed to the method call
       * @return self
-      * @throws
       * @throws InvalidEnumValueException - Thrown if the value passed is not an enum constant
       */
      final public static function __callStatic(string $method, array $args = []): self
