@@ -1,6 +1,9 @@
 language: php
 sudo: false
 
+git:
+  depth: 3
+
 matrix:
   include:
     - php: 7.1
@@ -14,7 +17,4 @@ cache:
 
 before_script:
   - if [ "$TEST" = "stable" ]; then phpenv config-rm xdebug.ini; fi
-  - composer install
-
-script:
-  - phpdbg -qrr vendor/bin/phpunit --bootstrap vendor/autoload.php tests
+  - composer install --no-interaction
