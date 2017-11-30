@@ -8,10 +8,10 @@ declare(strict_types=1);
  * @copyright Simon Deeley 2017
  */
 
-namespace simondeeley;
+namespace simondeeley\Enums;
 
 use simondeeley\Tests\EnumTestCase;
-use simondeeley\Enums\BooleanEnum;
+use simondeeley\Enums\Boolean;
 
 /**
  * Test case for boolean enum object
@@ -19,12 +19,12 @@ use simondeeley\Enums\BooleanEnum;
  * @author Simon Deeley <s.deeley@icloud.com>
  * @final
  */
-final class BooleanEnumTest extends EnumTestCase
+final class BooleanTest extends EnumTestCase
 {
     /**
      * @var string
      */
-    protected static $class = BooleanEnum::class;
+    protected static $class = Boolean::class;
 
     /**
      * Data provider
@@ -35,9 +35,9 @@ final class BooleanEnumTest extends EnumTestCase
     {
         return [
             [ 'TRUE', true, 'BOOLEAN' ],
-            [ BooleanEnum::TRUE, true, 'BOOLEAN' ],
+            [ Boolean::TRUE, true, 'BOOLEAN' ],
             [ 'FALSE', false, 'BOOLEAN' ],
-            [ BooleanEnum::FALSE, false, 'BOOLEAN' ],
+            [ Boolean::FALSE, false, 'BOOLEAN' ],
         ];
     }
 

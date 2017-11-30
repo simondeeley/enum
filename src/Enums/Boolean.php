@@ -8,7 +8,7 @@ declare(strict_types=1);
  * @copyright Simon Deeley 2017
  */
 
-namespace simondeeley;
+namespace simondeeley\Enums;
 
 use simondeeley\Enum;
 
@@ -18,7 +18,7 @@ use simondeeley\Enum;
  * @author Simon Deeley <s.deeley@icloud.com>
  * @final
  */
-final class BooleanEnum extends Enum
+final class Boolean extends Enum
 {
     const TRUE = true;
     const FALSE = false;
