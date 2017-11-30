@@ -52,7 +52,6 @@ abstract class EnumTestCase extends TestCase
      * @test
      * @dataProvider invalidData
      * @expectException simondeeley\Exceptions\InvalidEnumValueException
-     * @expectExceptionMessage Argument passed to ENUM constructor is not an allowed type
      * @final
      * @param string $constant
      * @return void
