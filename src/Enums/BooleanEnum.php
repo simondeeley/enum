@@ -18,7 +18,7 @@ use simondeeley\Enum;
  * @author Simon Deeley <s.deeley@icloud.com>
  * @final
  */
-final class Boolean extends Enum
+final class BooleanEnum extends Enum
 {
     const TRUE = true;
     const FALSE = false;
