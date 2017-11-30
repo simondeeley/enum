@@ -10,9 +10,9 @@ declare(strict_types=1);
 
 namespace simondeeley;
 
-use InvalidArgumentException;
 use simondeeley\Type\EnumType;
 use simondeeley\ImmutableObject;
+use simondeeley\Exceptions\InvalidEnumValueException;
 
 /**
  * Eum class
@@ -42,16 +42,12 @@ abstract class Enum extends ImmutableObject implements EnumType
      *
      * @param string $value - The value of the ENUM
      * @return void
-     * @throws InvalidArgumentException - Thrown if the value passed is invalid
+     * @throws InvalidEnumValueException - Thrown if the value passed is invalid
      */
     final public function __construct(string $type)
     {
         if (false === defined("static::$type") || null === constant("static::$type")) {
-           throw new InvalidArgumentException(sprintf(
-             'The type "%s" is not valid for the ENUM %s',
-             $type,
-             get_called_class()
-           ));
+           throw new InvalidEnumValueException;
         }
 
         $this->value = constant(static::$type);
