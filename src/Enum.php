@@ -67,9 +67,9 @@ abstract class Enum extends ImmutableObject implements EnumType
      final public static function __callStatic(string $method, array $args = []): self
      {
          try {
-             return new self(strtoupper($method));
+             return new static(strtoupper($method));
          } catch (InvalidEnumValueException $exception) {
-             return new self($method);
+             return new static($method);
          }
      }
 
