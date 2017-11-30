@@ -1,3 +1,7 @@
+1.1.1
+=====
+* Update test suites to PHP 7.2 and include code coverage report
+
 1.1.0
 =====
 * Add `getType` method to [`EnumType`](../blob/master/src/Type/EnumType) to return the set value of an enum object
