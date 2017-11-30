@@ -15,8 +15,8 @@ matrix:
 cache:
   - vendor
 
+
 before_script:
-  - if [ "$TEST" = "stable" ]; then phpenv config-rm xdebug.ini; fi
   - composer install --no-interaction
 
 after_script:
