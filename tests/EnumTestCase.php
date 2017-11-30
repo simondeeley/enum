@@ -56,7 +56,7 @@ abstract class EnumTestCase extends TestCase
      */
     final public function shouldCorrectlyInstantiateObjectStatically(string $method): void
     {
-        $enum = call_user_func("static::$class::$method");
+        $enum = [static::$class]::$method;
 
         $this->assertInstanceOf(EnumType::class, $enum);
         $this->assertEquals($expected, $enum->getValue());
