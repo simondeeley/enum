@@ -10,9 +10,9 @@ declare(strict_types=1);
 
 namespace simondeeley;
 
-use InvalidArgumentException;
 use simondeeley\Type\EnumType;
 use simondeeley\ImmutableObject;
+use simondeeley\Exceptions\InvalidEnumValueException;
 
 /**
  * Eum class
@@ -30,9 +30,9 @@ use simondeeley\ImmutableObject;
 abstract class Enum extends ImmutableObject implements EnumType
 {
     /**
-     * @var string $type
+     * @var mixed $value
      */
-    protected $type;
+    protected $value;
 
     /**
      * Construct a new ENUM object
@@ -42,19 +42,46 @@ abstract class Enum extends ImmutableObject implements EnumType
      *
      * @param string $value - The value of the ENUM
      * @return void
-     * @throws InvalidArgumentException - Thrown if the value passed is invalid
+     * @throws InvalidEnumValueException - Thrown if the value passed is invalid
      */
     final public function __construct(string $type)
     {
         if (false === defined("static::$type") || null === constant("static::$type")) {
-           throw new InvalidArgumentException(sprintf(
-             'The type "%s" is not valid for the ENUM %s',
-             $type,
-             get_called_class()
-           ));
+           throw new InvalidEnumValueException;
         }
 
-        $this->type = $type;
+        $this->value = constant("static::$type");
+     }
+
+     /**
+      * Call a static method to construct a new enum
+      *
+      * Attempts to convert the called method name to uppercase but if that fails
+      * then it resorts to using whatever case the method name was passed in.
+      *
+      * @param string $name - the name of the method to invoke
+      * @param array $args - an array of arguments passed to the method call
+      * @return self
+      * @throws InvalidEnumValueException - Thrown if the value passed is not an enum constant
+      */
+     final public static function __callStatic(string $method, array $args = []): self
+     {
+         try {
+             return new static(strtoupper($method));
+         } catch (InvalidEnumValueException $exception) {
+             return new static($method);
+         }
+     }
+
+     /**
+      * Returns the value of the ENUM
+      *
+      * @final
+      * @return mixed
+      */
+     final public function getValue()
+     {
+         return $this->value;
      }
 
      /**

@@ -45,3 +45,27 @@ use Acme\MyAwesomeEnum;
 $good = new MyAwesomeEnum('FOO');
 $bad = new MyAwesomeEnum('BAZ'); // throws an exception
 ```
+
+Examples
+========
+This package provides two enums for out-of-the-box use, [`Boolean`](../blob/master/src/Enums/Boolean.php) and [`Weekday`](../blob/master/src/Enums/Weekday.php). The first, [`Boolean`](../blob/master/src/Enums/Boolean.php) leverages an enum that is either true or false whilst the second is a list of the days of the week.
+```php
+use simondeeley\Enums\Boolean;
+use simondeeley\Enums\Weekday;
+
+$true = new Boolean('TRUE');
+$true->getValue(); // returns (bool) true
+
+$tuesday = new Weekday('TUESDAY');
+$tuesday->getValue(); // returns (string) "Tuesday"
+```
+
+Although not mandatory when building enum objects, both [`Boolean`](../blob/master/src/Enums/Boolean.php) and [`Weekday`](../blob/master/src/Enums/Weekday.php) each provide short-cut static methods to quickly create a new object, for example:
+
+```php
+$true = Boolean::true();
+
+$saturday = Weekday::Saturday();
+```
+
+This functionality is built-in to any enums extending the base [`Enum`](../blob/master/src/Enum.php) type object. The only caveats are that when performing static method calls that it is best to keep in-line with PHP good coding practice and to ensure all constants are typed in uppercase.

@@ -21,5 +21,10 @@ use simondeeley\Type\ImmutableType;
  */
 interface EnumType extends ImmutableType
 {
-    // No additional methods defined
+    /**
+     * Get the value of the ENUM
+     *
+     * @return mixed - returns the set value of the object
+     */
+    public function getValue();
 }
