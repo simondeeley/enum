@@ -47,53 +47,53 @@ abstract class Enum extends ImmutableObject implements EnumType
     final public function __construct(string $type)
     {
         if (false === defined("static::$type") || null === constant("static::$type")) {
-           throw new InvalidEnumValueException;
+            throw new InvalidEnumValueException;
         }
 
         $this->value = constant("static::$type");
-     }
+        }
 
-     /**
-      * Call a static method to construct a new enum
-      *
-      * Attempts to convert the called method name to uppercase but if that fails
-      * then it resorts to using whatever case the method name was passed in.
-      *
-      * @param string $name - the name of the method to invoke
-      * @param array $args - an array of arguments passed to the method call
-      * @return self
-      * @throws InvalidEnumValueException - Thrown if the value passed is not an enum constant
-      */
-     final public static function __callStatic(string $method, array $args = []): self
-     {
-         try {
-             return new static(strtoupper($method));
-         } catch (InvalidEnumValueException $exception) {
-             return new static($method);
-         }
-     }
+        /**
+         * Call a static method to construct a new enum
+         *
+         * Attempts to convert the called method name to uppercase but if that fails
+         * then it resorts to using whatever case the method name was passed in.
+         *
+         * @param string $name - the name of the method to invoke
+         * @param array $args - an array of arguments passed to the method call
+         * @return self
+         * @throws InvalidEnumValueException - Thrown if the value passed is not an enum constant
+         */
+        final public static function __callStatic(string $method, array $args = []): self
+        {
+            try {
+                return new static(strtoupper($method));
+            } catch (InvalidEnumValueException $exception) {
+                return new static($method);
+            }
+        }
 
-     /**
-      * Returns the value of the ENUM
-      *
-      * @final
-      * @return mixed
-      */
-     final public function getValue()
-     {
-         return $this->value;
-     }
+        /**
+         * Returns the value of the ENUM
+         *
+         * @final
+         * @return mixed
+         */
+        final public function getValue()
+        {
+            return $this->value;
+        }
 
-     /**
-      * Returns the type of the ENUM
-      *
-      * @see simondeeley\Type\Type
-      * @static
-      *
-      * @return string - String literal of the enum object
-      */
-     public static function getType(): string
-     {
-         return 'ENUM';
-     }
+        /**
+         * Returns the type of the ENUM
+         *
+         * @see simondeeley\Type\Type
+         * @static
+         *
+         * @return string - String literal of the enum object
+         */
+        public static function getType(): string
+        {
+            return 'ENUM';
+        }
 }
