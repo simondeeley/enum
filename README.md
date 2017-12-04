@@ -1,10 +1,9 @@
 ENUM object for PHP
 =======================
 
-[![Build Status](https://travis-ci.org/simondeeley/enum.svg?branch=master)](https://travis-ci.org/simondeeley/enum)
-[![License](https://poser.pugx.org/simondeeley/enum/license?format=flat-square)](https://packagist.org/packages/simondeeley/enum)
-[![Latest Unstable Version](https://poser.pugx.org/simondeeley/enum/v/unstable?format=flat-square)](https://packagist.org/packages/simondeeley/enum)
-[![Latest Stable Version](https://poser.pugx.org/simondeeley/enum/v/stable?format=flat-square)](https://packagist.org/packages/simondeeley/enum)
+[![License](https://poser.pugx.org/simondeeley/enum/license?format=flat-square)](https://packagist.org/packages/simondeeley/enum) [![Latest Stable Version](https://poser.pugx.org/simondeeley/enum/v/stable?format=flat-square)](https://packagist.org/packages/simondeeley/enum) [![Latest Unstable Version](https://poser.pugx.org/simondeeley/enum/v/unstable?format=flat-square)](https://packagist.org/packages/simondeeley/enum) [![Build Status](https://travis-ci.org/simondeeley/enum.svg?branch=master)](https://travis-ci.org/simondeeley/enum) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/simondeeley/enum/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/simondeeley/enum/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/simondeeley/enum/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/simondeeley/enum/?branch=master)
+
+
 
 A simple library for adding ENUM type objects into any existing or new PHP project.
 
